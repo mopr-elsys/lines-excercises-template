@@ -21,38 +21,37 @@ ostream& operator<<(ostream& out, const Point& p) {
     return out;
 }
 
+istream& operator>>(istream& in, Point& p) {
+    in >> p.x;
+    in >> p.y;
+    
+    return in;
+}
+
 /* struct Vector {
     double x, y;
-
     Vector(double x, double y) : x(x), y(y) {}
     Vector(const Point& p) : x(p.x), y(p.y) {}
     Vector(const Point& p1, const Point& p2) : x(p2.x-p1.x), y(p2.y-p1.y) {}
-
     Vector operator+(const Vector& v2) const {
         return Vector(x+v2.x, y+v2.y);
     }
-
     Vector operator-() const {
         return Vector(-x, -y);
     }
-
     Vector operator-(const Vector& v2) const {
         return *this + (-v2);
     }
-
     Vector operator*(const double a) const {
         return Vector(a*x, a*y);
     }
-
     double operator*(const Vector& v2) const {
         return x*v2.x + y*v2.y;
     }
-
     void print(ostream& out) const {
         out<< "("<< x<< ", "<< y<< ")";
     }
 };
-
 ostream& operator<<(ostream& out, const Vector& v) {
     v.print(out);
     return out;
@@ -91,4 +90,12 @@ struct Line {
 ostream& operator<<(ostream& out, const Line& l) {
     l.print(out);
     return out;
+}
+
+istream& operator>>(istream& in, Line& l) {
+    in >> l.A;
+    in >> l.B;
+    in >> l.C;
+    
+    return in;
 }
