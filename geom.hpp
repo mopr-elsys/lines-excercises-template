@@ -9,7 +9,7 @@ bool eq(double d1, double d2, double eps = 0.001) {
 struct Point {
     double x, y;
 
-    Point(double x, double y) : x(x), y(y) {}
+    Point(double x = 0, double y = 0) : x(x), y(y) {}
 
     void print(ostream& out) const {
         out<< "("<< x<< ", "<< y<< ")";
@@ -61,7 +61,7 @@ ostream& operator<<(ostream& out, const Vector& v) {
 struct Line {
     double A, B, C;
 
-    Line(double A, double B, double C) : A(A), B(B), C(C) {}
+    Line(double A = 0, double B = 0, double C = 0) : A(A), B(B), C(C) {}
 
     Line(const Point& p1, const Point& p2) {
         A = 0; B = 0; C = 0;
